@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F6F9">
+
+    <!-- Header Navigation -->
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@android:drawable/ic_menu_revert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#1A1A1A"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvFormTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="THÊM TÀI KHOẢN MỚI"
+        android:textColor="#1A1A1A"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnBack" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:paddingBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFormTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+
+            <!-- Khu vực Upload Ảnh Đại Diện -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardAvatar"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="2dp">
+
+                    <ImageView
+                        android:id="@+id/imgAvatarPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@android:drawable/ic_menu_myplaces"
+                        app:tint="#00ACC1"
+                        tools:ignore="ContentDescription" />
+                </androidx.cardview.widget.CardView>
+
+                <!-- Nút bấm upload/chọn ảnh -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnPickImage"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignBottom="@id/cardAvatar"
+                    android:layout_alignEnd="@id/cardAvatar"
+                    app:cardBackgroundColor="#00ACC1"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center"
+                        android:src="@android:drawable/ic_menu_camera"
+                        app:tint="#FFFFFF"
+                        tools:ignore="ContentDescription" />
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+            <!-- Card chứa các trường thông tin -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Trường: Họ và tên -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Họ và tên nhân viên *"
+                        android:textColor="#1A1A1A"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/edtFullName"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@android:drawable/editbox_background"
+                        android:hint="Nhập họ và tên"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textSize="13sp" />
+
+                    <!-- Trường: Mã NV -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="Mã nhân viên *"
+                        android:textColor="#1A1A1A"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/edtEmpCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@android:drawable/editbox_background"
+                        android:hint="VD: NV-202699"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textSize="13sp" />
+
+                    <!-- Trường: Chức vụ / Phòng ban -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="Chức vụ / Phòng ban"
+                        android:textColor="#1A1A1A"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/edtPosition"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@android:drawable/editbox_background"
+                        android:hint="VD: Nhân viên UI/UX"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textSize="13sp" />
+
+                    <!-- Trường: Email -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="Email đăng nhập *"
+                        android:textColor="#1A1A1A"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/edtEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@android:drawable/editbox_background"
+                        android:hint="nhanvien@company.com"
+                        android:inputType="textEmailAddress"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textSize="13sp" />
+
+                    <!-- Trường: Mật khẩu -->
+                    <TextView
+                        android:id="@+id/tvPasswordLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="Mật khẩu khởi tạo *"
+                        android:textColor="#1A1A1A"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/edtPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@android:drawable/editbox_background"
+                        android:hint="Nhập mật khẩu"
+                        android:inputType="textPassword"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Nút Lưu -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSaveAccount"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#00ACC1"
+                android:text="LƯU THÔNG TIN TÀI KHOẢN"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cornerRadius="25dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
