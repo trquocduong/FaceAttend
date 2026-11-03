@@ -16,7 +16,7 @@ public class AttendanceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_attendance);
+        setContentView(R.layout.activity_my_attendance);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.rootAttendance), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
